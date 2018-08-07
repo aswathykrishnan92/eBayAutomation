@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">Test Results</th></tr><tr><td><a href="#t0">Command line test a3d18dfe-b354-49a2-ac90-67465e78cf1b</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">156,209</td><td>checkoutProduct</td><td></td></tr></table><table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Test Results</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test a3d18dfe-b354-49a2-ac90-67465e78cf1b &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">app.tests.EndToEndTestCases</td><td><a href="#m0">checkoutProduct</a></td><td rowspan="1">1533619002395</td><td rowspan="1">124111</td></tr></tbody></table><h2>Command line test a3d18dfe-b354-49a2-ac90-67465e78cf1b</h2><h3 id="m0">app.tests.EndToEndTestCases#checkoutProduct</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">07-Aug-2018 10:46:58 AM : Entering the login credentials: Username-macuser@gmail.com Password-androiduser123<br/>07-Aug-2018 10:47:54 AM : Search Item:TV<br/>07-Aug-2018 10:48:19 AM : Clicking on a random product at position:2<br/>07-Aug-2018 10:48:31 AM : Verifying whether product name and price matches with that of search results page<br/>07-Aug-2018 10:48:33 AM : Add the product to cart<br/>07-Aug-2018 10:48:37 AM : Choose default quantity<br/>07-Aug-2018 10:48:45 AM : Click on review button<br/><a href='./screenshots/checkoutProduct.png'>Screenshot</a><br/><br> <a href='C:\Users\aswathy_krishnan\eclipse-workspace\EbayAutomation\test-output\screenshots\checkoutProduct.png'> <img src='C:\Users\aswathy_krishnan\eclipse-workspace\EbayAutomation\test-output\screenshots\checkoutProduct.png' height='200' width='200'/> </a> <br><br/>07-Aug-2018 10:48:52 AM : User Sign out</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.8.1&apos;, revision: &apos;6e95a6684b&apos;, time: &apos;2017-12-01T19:05:14.666Z&apos;
+System info: host: &apos;BLRKEC334480D&apos;, ip: &apos;172.21.6.91&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_131&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {app: C:\Users\aswathy_krishnan\D..., appActivity: com.ebay.mobile.activities...., appPackage: com.ebay.mobile, appWaitActivity: com.ebay.mobile.activities...., appWaitPackage: com.ebay.mobile, browserName: , databaseEnabled: false, desired: {app: C:\Users\aswathy_krishnan\D..., appPackage: com.ebay.mobile, browserName: , deviceName: 1c71acda, fullReset: false, launchActivity: com.ebay.mobile.MainActivity, noReset: true, platformName: Android, platformVersion: 5.1.1}, deviceManufacturer: LENOVO, deviceModel: Lenovo A6020a46, deviceName: 1c71acda, deviceScreenSize: 1080x1920, deviceUDID: 1c71acda, fullReset: false, javascriptEnabled: true, launchActivity: com.ebay.mobile.MainActivity, locationContextEnabled: false, networkConnectionEnabled: true, noReset: true, platform: LINUX, platformName: LINUX, platformVersion: 5.1.1, takesScreenshot: true, warnings: {}, webStorageEnabled: false}
+Session ID: d52976aa-693c-49de-b1dd-fd942ab94c12
+*** Element info: {Using=id, value=com.ebay.mobile:id/take_act}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:89)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:42)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:371)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:62)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:417)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElementById(DefaultGenericMobileDriver.java:70)
+	at io.appium.java_client.AppiumDriver.findElementById(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElementById(AndroidDriver.java:1)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at core.Action.findElement(Unknown Source)
+	at app.pages.ProductDetailsPage.clickOnReviewButton(Unknown Source)
+	at app.tests.EndToEndTestCases.checkoutProduct(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 14 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p></body></html>

@@ -1,0 +1,14 @@
+checkoutProduct: !!testdata.yaml.SearchData {
+ LoginDetails: {
+     emailid: macuser@gmail.com,
+     password: androiduser123,
+    },
+    searchSku: TV
+}
+searchProduct: !!testdata.yaml.SearchData {
+ LoginDetails: {
+     emailid: macuser@gmail.com,
+     password: androiduser123,
+    },
+    searchSku: 65-inch TV
+}

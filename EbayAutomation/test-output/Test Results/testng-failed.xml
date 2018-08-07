@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Test Results]" parallel="methods">
+  <test name="Command line test a3d18dfe-b354-49a2-ac90-67465e78cf1b(failed)" parallel="methods">
+    <groups>
+      <run>
+        <include name="checkoutProduct"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="app.tests.EndToEndTestCases">
+        <methods>
+          <include name="checkoutProduct"/>
+        </methods>
+      </class> <!-- app.tests.EndToEndTestCases -->
+    </classes>
+  </test> <!-- Command line test a3d18dfe-b354-49a2-ac90-67465e78cf1b(failed) -->
+</suite> <!-- Failed suite [Test Results] -->

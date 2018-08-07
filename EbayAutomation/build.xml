@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ebay" default="main" basedir=".">
+
+	<property name="build.dir" location="bin">
+	</property>
+	<property name="src.dir" location="src">
+	</property>
+	<property name="docs.dir" location="docs">
+	</property>
+	<property name="dist.dir" location="dist">
+	</property>
+	<property name="lib.dir" location="lib">
+	</property>
+	<property name="resources.dir" location="resources">
+	</property>
+	<path id="build.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	<pathconvert property="classpathProp" refid="build.classpath" />
+	<echo>Classpath is ${classpathProp}</echo>
+	<target name="init">
+		<mkdir dir="bin"/>
+		<mkdir dir="dist"/>
+		<mkdir dir="docs"/>
+
+	</target>
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete dir="${docs.dir}"/>
+		<delete dir="${dist.dir}"/>
+	</target>
+	<target name="compile" depends="clean,init">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="build.classpath" includeantruntime="false">		    
+		</javac>
+	</target>
+	<target name="main" depends="compile">
+		<java classname="core.Trigger" classpath="${build.dir}" classpathref="build.classpath"></java>
+	</target>
+
+</project>
