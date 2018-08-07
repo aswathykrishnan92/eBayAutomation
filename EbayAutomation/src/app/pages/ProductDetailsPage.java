@@ -17,7 +17,7 @@ public class ProductDetailsPage extends BasePage{
 	public static Locator PDP_PRODUCT_BUY_NOW_BUTTON=new Locator("Product Buy Now Button", "com.ebay.mobile:id/button_bin", Type.ID);
 	public static Locator PDP_QUANTITY=new Locator("Product Quantity", "android:id/numberpicker_input", Type.ID);
 	public static Locator PDP_QUANTITY_2=new Locator("Product Quantity", "//android.widget.Button[@text='2']", Type.XPATH);
-	public static Locator PDP_REVIEW=new Locator("Product Quantity", "com.ebay.mobile:id/take_act", Type.ID);
+	public static Locator PDP_REVIEW=new Locator("Product Quantity", "com.ebay.mobile:id/take_action", Type.ID);
 
 	public ProductDetailsPage(AndroidDriver<MobileElement> driver) {
 		this.driver=driver;
