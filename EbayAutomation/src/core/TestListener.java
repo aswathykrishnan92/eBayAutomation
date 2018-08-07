@@ -57,7 +57,7 @@ public class TestListener implements ITestListener {
 			FileUtils.copyFile(source,copied );
 			String hrefPath = "./screenshots/" + testcase + ".png";
 			Reporter.log("<a href='" + hrefPath + "'>Screenshot</a>");		
-			Reporter.log("<br> <a href='"+copied.getAbsolutePath()+"'> <img src='"+copied.getAbsolutePath()+ "' height='200' width='200'/> </a> <br>");
+			//Reporter.log("<br> <a href='"+copied.getAbsolutePath()+"'> <img src='"+copied.getAbsolutePath()+"' height='200' width='200'/> </a> <br>");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

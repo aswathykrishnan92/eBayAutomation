@@ -43,6 +43,7 @@ public class HomePage extends BasePage {
 	public HomePage signIn(String username,String password) throws Exception {
 
 		TestNGUtils.reportLog("Entering the login credentials: Username-"+username+" Password-"+password);
+		getAction().storeKeyValue("signedIn", false);
 		getAction().waitFor(11000);
 		getAction().findElement(SIGN_IN_BUTTON);
 		getAction().click(SIGN_IN_BUTTON);
@@ -57,11 +58,12 @@ public class HomePage extends BasePage {
 
 
 		Assert.assertTrue(!getAction().isElementVisible(SIGN_IN_BUTTON_ACCEPT), "Sign in button still visible. Sign In unsuccessful");
-
+		getAction().storeKeyValue("signedIn", true);
 		return this;
 	}
 	public HomePage signOut() {
 
+		if((boolean) getAction().retrieveKeyValue("signedIn")) {
 		TestNGUtils.reportLog("User Sign out");
 		getAction().waitFor(5000);
 		getAction().findElement(MENU_BUTTON);
@@ -82,6 +84,9 @@ public class HomePage extends BasePage {
 
 			Assert.assertTrue(getAction().isElementVisible(SIGN_IN_BUTTON), "Sign Out is unsuccessful;");
 		}
+		getAction().storeKeyValue("signedIn", false);
+		}
+
 		return this;
 	}
 

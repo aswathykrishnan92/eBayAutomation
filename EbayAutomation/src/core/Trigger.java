@@ -29,8 +29,7 @@ public class Trigger {
 
 		List<XmlPackage> xpackage=new ArrayList<XmlPackage>();
 		xpackage.add(new XmlPackage(TestProperties.TESTNG_PACKAGE.toString()));
-		System.out.println(TestProperties.TESTNG_PACKAGE.toString());
-		System.out.println(TestProperties.TESTNG_GROUP.toString());
+
 		
 		XmlTest test=new XmlTest(suite);
 		test.setPackages(xpackage);
@@ -42,7 +41,7 @@ public class Trigger {
 	
 		
 		TestNG tng=new TestNG();
-		tng.setOutputDirectory("C:\\Users\\aswathy_krishnan\\eclipse-workspace\\EbayAutomation\\test-output\\");
+		tng.setOutputDirectory(System.getProperty("user.dir")+"\\test-output\\");
 		tng.setXmlSuites(suits);
 		tng.addListener((ITestNGListener) listener);
 		tng.run();

@@ -10,6 +10,7 @@ import utils.Locator.Type;
 
 public class CheckoutPage extends BasePage{
 	public static Locator CHECKOUT_ERROR=new Locator("Checkout Error", "com.ebay.mobile:id/home", Type.ID);
+	public static Locator CHECKOUT_ERROR_TEXT=new Locator("Checkout Error text", "Buying service error: TUV interruption error", Type.ID);
 	public static Locator CONTINUE_SHOPPING=new Locator("Continue Shopping button", "Continue Shopping", Type.ID);
 	public static Locator CHECKOUT_PRODUCT_NAME=new Locator("Checkout product name", "com.ebay.mobile:id/item_title", Type.ID);
 	public static Locator CHECKOUT_PRODUCT_PRICE=new Locator("Checkout product price", "com.ebay.mobile:id/textview_item_price", Type.ID);
@@ -47,6 +48,8 @@ public class CheckoutPage extends BasePage{
 		TestNGUtils.reportLog("Check if error page is loaded");
 		boolean error=false;
 		getAction().waitFor(2000);
+		boolean b=getAction().isElementVisible(CHECKOUT_ERROR_TEXT);
+		System.out.println(b);
 		if(getAction().isElementVisible(CHECKOUT_ERROR)) {
 			error=true;
 		}
