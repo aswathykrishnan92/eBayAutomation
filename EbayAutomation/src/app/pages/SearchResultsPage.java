@@ -17,6 +17,12 @@ public class SearchResultsPage extends BasePage {
 
 	}
 	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Click on a Random product in SRP after scrolling
+	 * @return
+	 * @throws Exception
+	 */
 	public SearchResultsPage clickOnRandomProduct() throws Exception {
 		Random ran = new Random();
 		int x = ran.nextInt(2);

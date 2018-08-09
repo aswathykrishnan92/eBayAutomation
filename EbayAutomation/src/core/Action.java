@@ -2,6 +2,7 @@ package core;
 
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +26,12 @@ public class Action {
 		this.appdriver = driver;
 	}
 
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Click on a Locator
+	 * @return
+	 * @throws Exception
+	 */
 	public Action click(Locator loc) {
 		try {
 			appdriver.findElement(Locator.getByObject(loc)).click();
@@ -35,9 +42,23 @@ public class Action {
 
 		return this;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Store a value with key
+	 * @return
+	 * @throws Exception
+	 */
 	public  synchronized void storeKeyValue(String key,Object value) {
 		hashMap.put(key, value);
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Retrieve value with Key
+	 * @return
+	 * @throws Exception
+	 */
 	public  synchronized Object retrieveKeyValue(String key) {
 		return hashMap.get(key);
 	}
@@ -62,6 +83,13 @@ public class Action {
 
 		return this;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Scroll for 'N' number of times
+	 * @return
+	 * @throws Exception
+	 */
 	public Action scrollForN(int num) {
 		try {
 			while(num>0) {
@@ -79,23 +107,38 @@ public class Action {
 
 		return this;
 	}
-	public Action findElementByID(Locator loc) throws Exception {
-
-		waitTillElementVisible(3000,loc);
-		appdriver.findElement(MobileBy.id(loc.getValue()));
-		return this;
-	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Find element in the page by locator
+	 * @return
+	 * @throws Exception
+	 */
 	public WebElement findElement(Locator loc)  {
 
 		waitTillElementVisible(3000,loc);
 		WebElement ele=appdriver.findElement(Locator.getByObject(loc));
 		return ele;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Get text from locator
+	 * @return
+	 * @throws Exception
+	 */
 	public String getText(Locator loc) throws Exception {
 
 		String text=	appdriver.findElement(Locator.getByObject(loc)).getText();
 		return text;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Returns true if element visible in page 
+	 * @return
+	 * @throws Exception
+	 */
 	public boolean isElementVisible(Locator loc){
 		boolean isvisible=false;
 		try {
@@ -106,6 +149,13 @@ public class Action {
 		}		
 		return isvisible;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Send text to locator
+	 * @return
+	 * @throws Exception
+	 */
 	public Action sendText(Locator loc,String input) {
 		waitTillElementVisible(3000,loc);
 		appdriver.findElement(Locator.getByObject(loc)).clear();;
@@ -113,12 +163,26 @@ public class Action {
 
 		return this;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Press enter in android
+	 * @return
+	 * @throws Exception
+	 */
 	public Action pressEnter() {
 
 		appdriver.pressKeyCode(AndroidKeyCode.ENTER);		
 
 		return this;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Wait till element is visible
+	 * @return
+	 * @throws Exception
+	 */
 	public void waitTillElementVisible(long sec, Locator loc) {
 		try {
 			WebDriverWait wait=new WebDriverWait(appdriver, sec);
@@ -127,6 +191,13 @@ public class Action {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Rotate to 'mode'. Mode can be landscape or portrait
+	 * @return
+	 * @throws Exception
+	 */
 	public void rotateTo(String mode) {
 		try {
 
@@ -145,9 +216,18 @@ public class Action {
 
 
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: wait for milliseconds
+	 * @return
+	 * @throws Exception
+	 */
 	public void waitFor(long sec) {
 		try {
 			Thread.sleep(sec);
+			//appdriver.manage().timeouts().implicitlyWait(sec, TimeUnit.SECONDS);
+
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

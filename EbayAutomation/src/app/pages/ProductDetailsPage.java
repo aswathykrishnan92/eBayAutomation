@@ -24,7 +24,12 @@ public class ProductDetailsPage extends BasePage{
 
 	}
 
-
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Verify the product details in PDP with that of SRP 
+	 * @return
+	 * @throws Exception
+	 */
 	public ProductDetailsPage verifyProductDetailsInProductPage() throws Exception {
 
 		TestNGUtils.reportLog("Verifying whether product name and price matches with that of search results page");
@@ -39,6 +44,13 @@ public class ProductDetailsPage extends BasePage{
 
 		return this;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Click on 'Buy now' button to add to cart
+	 * @return
+	 * @throws Exception
+	 */
 	public ProductDetailsPage addProductToCart() throws Exception {
 		TestNGUtils.reportLog("Add the product to cart");
 		getAction().findElement(PDP_PRODUCT_BUY_NOW_BUTTON);
@@ -46,6 +58,13 @@ public class ProductDetailsPage extends BasePage{
 		getAction().waitFor(2000);
 		return this;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Add the default quantity to cart
+	 * @return
+	 * @throws Exception
+	 */
 	public ProductDetailsPage addQuantity() throws Exception {
 		TestNGUtils.reportLog("Choose default quantity");
 		getAction().findElement(PDP_QUANTITY);
@@ -56,6 +75,12 @@ public class ProductDetailsPage extends BasePage{
 		getAction().waitFor(2000);
 		return this;
 	}
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Click on 'Review' button
+	 * @return
+	 * @throws Exception
+	 */
 	public ProductDetailsPage clickOnReviewButton() throws Exception {
 		TestNGUtils.reportLog("Click on review button");
 		getAction().findElement(PDP_REVIEW);

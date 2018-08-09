@@ -27,12 +27,18 @@ public class HomePage extends BasePage {
 	public HomePage() {
 	}
 
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Searches an item on search bar
+	 * @return
+	 * @throws Exception
+	 */
 	public HomePage searchItem(String sku) throws Exception {
 		TestNGUtils.reportLog("Search Item:"+sku);
 		getAction().waitFor(2000);
-		getAction().findElementByID(SEARCH_BAR);
+		getAction().findElement(SEARCH_BAR);
 		getAction().click(SEARCH_BAR);
-		getAction().findElementByID(SEARCH_BAR_ENTRY);
+		getAction().findElement(SEARCH_BAR_ENTRY);
 		getAction().sendText(SEARCH_BAR_ENTRY, sku);
 		getAction().pressEnter();
 		getAction().waitFor(8000);
@@ -40,6 +46,13 @@ public class HomePage extends BasePage {
 
 		return this;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Sign in to the site
+	 * @return
+	 * @throws Exception
+	 */
 	public HomePage signIn(String username,String password) throws Exception {
 
 		TestNGUtils.reportLog("Entering the login credentials: Username-"+username+" Password-"+password);
@@ -50,7 +63,7 @@ public class HomePage extends BasePage {
 		getAction().waitFor(5000);
 		getAction().findElement(USERNAME);
 		getAction().sendText(USERNAME, username);
-		getAction().findElementByID(PASSWORD);
+		getAction().findElement(PASSWORD);
 		getAction().click(PASSWORD);
 		getAction().sendText(PASSWORD, password);
 		getAction().click(SIGN_IN_BUTTON_ACCEPT);
@@ -61,6 +74,13 @@ public class HomePage extends BasePage {
 		getAction().storeKeyValue("signedIn", true);
 		return this;
 	}
+	
+	/**
+	 * @author Aswathy_Krishnan
+	 * Description: Sign out from site
+	 * @return
+	 * @throws Exception
+	 */
 	public HomePage signOut() {
 
 		if((boolean) getAction().retrieveKeyValue("signedIn")) {
